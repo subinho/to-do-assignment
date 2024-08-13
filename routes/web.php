@@ -9,3 +9,5 @@ Route::view('/', 'index', [
 ]);
 
 Route::get('todo/{todo}', [TodoController::class, 'show']);
+
+Route::delete('todo/{todo}', [TodoController::class, 'destroy']);

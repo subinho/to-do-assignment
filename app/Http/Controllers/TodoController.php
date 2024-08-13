@@ -14,4 +14,11 @@ class TodoController extends Controller
             'todo' => $todo,
         ]);
     }
+
+    public function destroy(Todo $todo)
+    {
+        $todo->delete();
+
+        return redirect('/');
+    }
 }
