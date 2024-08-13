@@ -9,5 +9,7 @@ Route::view('/', 'index', [
 ]);
 
 Route::get('todo/{todo}', [TodoController::class, 'show']);
+Route::get('todo/{todo}/edit', [TodoController::class, 'edit']);
 
+Route::patch('todo/{todo}', [TodoController::class, 'update']);
 Route::delete('todo/{todo}', [TodoController::class, 'destroy']);
