@@ -6,7 +6,6 @@
                 <p class="text-sm">{{$todo->body}}</p>
             </a>
             <div class="flex items-end">
-                <a href="/todo/edit" class="mr-2">Edit</a>
                 <button type="submit">Delete</button>
             </div>
         </div>
