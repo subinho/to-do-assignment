@@ -22,7 +22,7 @@ https://getcomposer.org/download/
 
 1. Clone the repository
 ```bash
-  git clone https://github.com/subinho/notes.git
+  git clone https://github.com/subinho/to-do-assignment.git
 ```
 
 2. Install composer packages
