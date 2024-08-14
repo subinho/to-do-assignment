@@ -6,10 +6,7 @@ use App\Http\Controllers\TodoController;
 use App\Models\Todo;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'index', [
-    'todos' => Todo::all()
-]);
-
+Route::get('/', [TodoController::class, 'index']);
 
 Route::get('todo/{todo}', [TodoController::class, 'show']);
 Route::get('todo/{todo}/edit', [TodoController::class, 'edit']);

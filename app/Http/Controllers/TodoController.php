@@ -5,9 +5,19 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TodoController extends Controller
 {
+    public function index()
+    {
+        $userId = Auth::id();
+        $todos = Todo::where('user_id', $userId)->get();
+
+        return view('index  ', [
+            'todos' => $todos,
+        ]);
+    }
     public function show(Todo $todo)
     {
         return view('todo', [
