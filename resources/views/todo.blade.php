@@ -1,9 +1,9 @@
 <x-layout>
 
     @if(!$todo->completed)
-    <p class="text-red-500">Time left {{ $todo->getRemainingTime()  }}</p>
+    <p class="text-red-500 text-sm mb-2">Time left {{ $todo->getRemainingTime()  }}</p>
     @endif
-    <p class="mb-4">Todo is {{$todo->completed ? 'completed' : 'in progress'}}</p>
+    <p class="mb-4 text-sm">Todo is {{$todo->completed ? 'completed' : 'in progress'}}</p>
     <h3 class="text-lg font-bold mb-2">{{$todo->title}}</h3>
     <p>{{$todo->body}}</p>
 

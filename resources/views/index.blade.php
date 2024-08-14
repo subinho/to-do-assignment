@@ -1,6 +1,11 @@
 <x-layout>
     <div class="flex items-center justify-center mb-7 font-bold ">
-        <x-button href="todo/create">Create new task</x-button>
+        @auth
+            <x-button href="todo/create">Create new task</x-button>
+        @endauth
+        @guest
+            <span class="text-xl">To create your first task you need to <a href="/login" class="text-violet-600">log in.</a></span>
+        @endguest
     </div>
     @foreach($todos as $todo)
         <div class="mb-4 flex justify-between items-center p-2   ">

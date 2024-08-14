@@ -20,6 +20,10 @@ class TodoController extends Controller
     }
     public function show(Todo $todo)
     {
+        if(Auth::id() !== $todo->user_id) {
+            abort(403);
+        }
+
         return view('todo', [
             'todo' => $todo,
         ]);
@@ -27,6 +31,9 @@ class TodoController extends Controller
 
     public function create()
     {
+        if(!Auth::user()) {
+            return redirect('/login');
+        }
         return view('create');
     }
 
@@ -51,6 +58,10 @@ class TodoController extends Controller
 
     public function destroy(Todo $todo)
     {
+        if(Auth::id() !== $todo->user_id) {
+            abort(403);
+        }
+
         $todo->delete();
 
         return redirect('/');
@@ -58,6 +69,10 @@ class TodoController extends Controller
 
     public function edit(Todo $todo)
     {
+        if(Auth::id() !== $todo->user_id) {
+            abort(403);
+        }
+
         return view('edit', [
             'todo' => $todo,
         ]);
@@ -65,6 +80,9 @@ class TodoController extends Controller
 
     public function update(Todo $todo)
     {
+        if(Auth::id() !== $todo->user_id) {
+            abort(403);
+        }
 
         request()->validate([
             'title' => ['required', 'min:3'],

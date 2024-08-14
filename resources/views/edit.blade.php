@@ -32,7 +32,6 @@
                                 class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
                             >
                                 <textarea
-                                    type="text"
                                     name="body"
                                     id="body"
                                     rows="10"

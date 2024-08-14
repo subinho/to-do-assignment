@@ -23,12 +23,13 @@
                             <x-form-label for="body">Body</x-form-label>
 
                             <div class="mt-2">
-                                <x-form-input name="body" id="body" placeholder="Description" />
-
+{{--                                <x-form-input name="body" id="body" placeholder="Description" />--}}
+                                <x-form-textarea id="body" name="body" placeholder="Description" rows="10"></x-form-textarea>
                                 <x-form-error name="body" />
                             </div>
                         </x-form-field>
                     </div>
+                    <p class="text-red-500 mt-8 text-sm">Time to complete the task  is 24 hours</p>
                 </div>
             </div>
 

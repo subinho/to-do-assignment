@@ -48,6 +48,9 @@
                         </div>
                     </x-form-field>
                 </div>
+                <div class="flex justify-end text-sm">
+                    <span>Already registered? <a href="/login" class="text-violet-600 font-semibold">Sign in</a></span>
+                </div>
             </div>
         </div>
 

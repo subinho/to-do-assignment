@@ -28,7 +28,7 @@
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
-                            <x-nav-link href="/" :active="request()->is('/')" >Notes</x-nav-link>
+                            <x-nav-link href="/" :active="request()->is('/')" >Todos</x-nav-link>
                         </div>
                     </div>
                 </div>
@@ -86,6 +86,9 @@
         </div>
     </nav>
     <main>
+        <header>
+
+        </header>
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             {{ $slot  }}
         </div>
