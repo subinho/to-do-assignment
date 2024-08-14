@@ -32,6 +32,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function todo()
+    {
+        return $this->hasMany(Todo::class);
+    }
+
     /**
      * Get the attributes that should be cast.
      *
