@@ -25,6 +25,30 @@ class TodoController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('create');
+    }
+
+    public function store()
+    {
+        $validated = request()->validate([
+            'title' => ['required', 'min:3'],
+            'body' => ['nullable'],
+        ]);
+
+        $userId = Auth::id();
+
+        Todo::create([
+            'title' => $validated['title'],
+            'body' => $validated['body'],
+            'user_id' => $userId,
+            'completed' => false,
+        ]);
+
+        return redirect('/');
+    }
+
     public function destroy(Todo $todo)
     {
         $todo->delete();
@@ -44,7 +68,7 @@ class TodoController extends Controller
 
         request()->validate([
             'title' => ['required', 'min:3'],
-            'body' => ['required'],
+            'body' => ['nullable'],
             'completed' => ['nullable', 'boolean'],
         ]);
 
@@ -55,5 +79,14 @@ class TodoController extends Controller
         ]);
 
         return redirect('/todo/' . $todo->id);
+    }
+
+    public function complete(Todo $todo)
+    {
+        $todo->update([
+           'completed' => !$todo->completed,
+        ]);
+
+        return redirect('/');
     }
 }
