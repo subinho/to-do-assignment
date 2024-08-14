@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Todo App</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -28,7 +28,7 @@
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
-                            <x-nav-link href="/" :active="request()->is('about')" >Notes</x-nav-link>
+                            <x-nav-link href="/" :active="request()->is('/')" >Notes</x-nav-link>
                         </div>
                     </div>
                 </div>

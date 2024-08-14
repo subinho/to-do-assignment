@@ -75,7 +75,7 @@ class TodoController extends Controller
         $todo->update([
             'title' => request('title'),
             'body' => request('body'),
-            'completed' => request()->has('completed') ? true : false,
+            'completed' => request()->has('completed'),
         ]);
 
         return redirect('/todo/' . $todo->id);
