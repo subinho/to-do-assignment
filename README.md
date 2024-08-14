@@ -1,5 +1,4 @@
-
-# Notes App
+# Todo App
 A todo web application, you can create, edit, delete and show your tasks, each task has time limit to be completed which is 24 hours, you can complete the task by clicking on red cross icon next to time limit on hero page where you can see all your tasks or if you need to work more on that task you can click the check icon to mark the task as not completed. 
 
 Images of the application are at the bottom.
