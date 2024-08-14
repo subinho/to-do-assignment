@@ -1,5 +1,10 @@
 <x-layout>
-    <h3>{{$todo->title}}</h3>
+
+    @if(!$todo->completed)
+    <p class="text-red-500">Time left {{ $todo->getRemainingTime()  }}</p>
+    @endif
+    <p class="mb-4">Todo is {{$todo->completed ? 'completed' : 'in progress'}}</p>
+    <h3 class="text-lg font-bold mb-2">{{$todo->title}}</h3>
     <p>{{$todo->body}}</p>
 
     <div class="mt-6 flex items-center justify-between gap-x-6">
