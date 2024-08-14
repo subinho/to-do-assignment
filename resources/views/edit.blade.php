@@ -15,7 +15,7 @@
                                     type="text"
                                     name="title"
                                     id="title"
-                                    class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                    class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 text-lg font-bold"
                                     placeholder="Shift Leader"
                                     value="{{ $todo->title }}"
                                     required>
@@ -38,14 +38,24 @@
                                     rows="10"
                                     class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     placeholder="Description"
-{{--                                    value="{{ $todo->body }}"--}}
-                                    required>
-                                    {{$todo->body}}
+                                    >{{trim($todo->body)}}
                                 </textarea>
                             </div>
 
                             <x-form-error name="body" />
                         </div>
+                    </div>
+
+                    <div class="sm:col-span-4">
+                        <label for="completed" class="block text-sm font-medium leading-6 text-gray-900">Completed</label>
+                        <div class="mt-2">
+                            <input
+                                type="checkbox"
+                                name="completed"
+                                id="completed"
+                                value="1"
+                                {{ $todo->completed ? 'checked' : '' }}
+                            >
                     </div>
 
                 </div>
